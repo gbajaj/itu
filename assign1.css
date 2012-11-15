@@ -1,0 +1,24 @@
+table{
+    border: thin solid black;
+    border-spacing: 0px;
+}
+td {
+    border: thin gray solid;
+}
+th{
+    border: thin gray solid;
+}
+caption{
+    font-weight: bold;
+}
+.contact{
+    font-weight: bold;
+
+}
+.heading{
+    background-color: brown ;
+}
+
+#name{
+    text-align: center;
+}
