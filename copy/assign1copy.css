@@ -1,0 +1,68 @@
+body{
+    font-family: Century Gothic, sans-serif;
+    color:        #444444;
+    background-color: #FBF5E6
+}
+
+
+
+
+table{
+    border: thin solid black;
+    border-spacing: 0px;
+}
+td {
+    border: thin gray solid;
+}
+th{
+    border: thin gray solid;
+}
+caption{
+    font-weight: bold;
+}
+.contact{
+    font-weight: bold;
+
+}
+.heading{
+    background-color: brown ;
+}
+
+#name{
+    text-align: center;
+}
+.key{
+    font-weight: bold;
+}
+ul.navigation{
+    margin:0;
+    padding:0;
+    list-style-type: none;
+    background-color: #83c8f9;
+    width: 200px;
+    line-height: 200%;
+
+
+}
+
+ul.navigation li{
+    margin:0px;
+    padding:0px;
+    border-top:1px solid #000099;
+    border-bottom:1px solid #2984c3;
+
+}
+ul.navigation li a{
+    display:block;
+    text-decoration:none;
+    margin: 0;
+    padding:0 0 0 20px;
+    width:180px;
+}
+ul.navigation li a:hover{
+    background:#0000ff url("images/vert-one_arrow.gif") no-repeat;
+}
+
+ul.navigation li a.current, ul.vert-one li a.current:hover{
+    background:#0000ff url("images/vert-one_arrow.gif") no-repeat;
+}
