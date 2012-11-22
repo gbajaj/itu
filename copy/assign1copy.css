@@ -41,11 +41,10 @@ caption{
     background-color: brown ;
 }
 
-#name{
-    text-align: center;
-}
 .key{
     font-weight: bold;
+    margin-left: 0px;
+    text-align: left;
 }
 
 ul.menu li a:hover{
@@ -60,8 +59,39 @@ text-align: center;
 }
 
 #contact{
-      color: blue;
-      text-align: center;
-      padding-top:25px;	
-      }			
-	
+    color: blue;
+    text-align: center;
+    padding-top:25px;
+}
+
+.details {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.noList li div {
+    display: table-cell;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.textRight {
+    text-align: right;
+}
+
+.noList {
+    list-style: none;
+    display: table;
+    padding: 0;
+}
+
+.noList li {
+    display:table-row;
+
+}
+
+.keyValue {
+    padding-left: 10px;
+}
+
+
