@@ -3,10 +3,22 @@ body{
     color:        #444444;
     background-color: #FBF5E6
 }
+ul.menu li{
+	margin:0;
+    padding:0;
+    list-style-type: none;
+    width: 200px;
+    line-height: 500%
+	
+}
+ ul.menu li a{
+    display:block;
+    text-decoration:none;
+    margin: 0;
+    padding:0 0 0 20px;
+    width:180px;
 
-
-
-
+}
 table{
     border: thin solid black;
     border-spacing: 0px;
@@ -34,35 +46,14 @@ caption{
 .key{
     font-weight: bold;
 }
-ul.navigation{
-    margin:0;
-    padding:0;
-    list-style-type: none;
-    background-color: #83c8f9;
-    width: 200px;
-    line-height: 200%;
 
-
+ul.menu li a:hover{
+    color:red;
 }
 
-ul.navigation li{
-    margin:0px;
-    padding:0px;
-    border-top:1px solid #000099;
-    border-bottom:1px solid #2984c3;
-
+ul.menu li a.current, ul.vert-one li a.current:hover{
+    background:#0000ff ;
 }
-ul.navigation li a{
-    display:block;
-    text-decoration:none;
-    margin: 0;
-    padding:0 0 0 20px;
-    width:180px;
-}
-ul.navigation li a:hover{
-    background:#0000ff url("images/vert-one_arrow.gif") no-repeat;
-}
-
-ul.navigation li a.current, ul.vert-one li a.current:hover{
-    background:#0000ff url("images/vert-one_arrow.gif") no-repeat;
+#me h2{
+text-align: center;
 }
