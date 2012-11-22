@@ -4,18 +4,19 @@ body{
     background-color: #FBF5E6
 }
 ul.menu li{
-	margin:0;
+    margin:0;
     padding:0;
     list-style-type: none;
     width: 200px;
     line-height: 500%
+
 	
 }
  ul.menu li a{
     display:block;
     text-decoration:none;
-    margin: 0;
-    padding:0 0 0 20px;
+    margin:5px;
+    padding:0;
     width:180px;
 
 }
@@ -57,3 +58,10 @@ ul.menu li a.current, ul.vert-one li a.current:hover{
 #me h2{
 text-align: center;
 }
+
+#contact{
+      color: blue;
+      text-align: center;
+      padding-top:25px;	
+      }			
+	
