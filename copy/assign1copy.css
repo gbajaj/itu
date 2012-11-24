@@ -1,6 +1,6 @@
 body{
     font-family: Century Gothic, sans-serif;
-    color:        #444444;
+   
     background-color: #FBF5E6
 }
 ul.menu li{
@@ -18,11 +18,12 @@ ul.menu li{
     margin:5px;
     padding:0;
     width:180px;
-
+    color:#0276FD;
 }
 table{
     border: thin solid black;
     border-spacing: 0px;
+    margin-left:45px;	
 }
 td {
     border: thin gray solid;
@@ -32,13 +33,14 @@ th{
 }
 caption{
     font-weight: bold;
+    color:#0099CC;	
 }
 .contact{
     font-weight: bold;
 
 }
 .heading{
-    background-color: brown ;
+    background-color: #00B2EE;
 }
 
 .key{
@@ -59,7 +61,7 @@ text-align: center;
 }
 
 .color{
-    color: blue;
+    color: #0099CC;
        
 }
 
@@ -94,30 +96,33 @@ text-align: center;
 }
 #main{
    text-align: center;
+   color: #0276FD;
+}
+
+h2{
+    color:#0099CC;
 }
 
 ol.adventures li{
 	list-style-image:url(backpack.gif);
-	color: blue;
-	font-weight:  bold;
-}
-#photo{
-.photo{
- height: 140px;
-    width: 120px;
-   float:right; 	   
-  width: 120px;
-  float:right; 	   
 	
-     }				
-     }	
+}
+
+.photo{
+    height: 140px;
+    width: 120px;
+    float:right; 	   
+   	   
+	
+}				
+     	
 
 #beach{
  height: 250px;
  width: 300px;
  margin-left:150px; 	   
 	
-     }	
+}	
 
 .flower{
   height:255px;
@@ -130,7 +135,4 @@ ol.adventures li{
   width: 200px;
   margin-left:170px;
   margin-top: -100px;
-}
-#favorites ul li a{
-text-decoration: none;
 }
