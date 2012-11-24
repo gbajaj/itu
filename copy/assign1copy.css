@@ -92,17 +92,45 @@ text-align: center;
 .keyValue {
     padding-left: 10px;
 }
-
-.textCenter {
-    text-align: center;
+#main{
+   text-align: center;
 }
 
 ol.adventures li{
 	list-style-image:url(backpack.gif);
+	color: blue;
+	font-weight:  bold;
 }
 #photo{
+.photo{
  height: 140px;
     width: 120px;
    float:right; 	   
+  width: 120px;
+  float:right; 	   
 	
      }				
+     }	
+
+#beach{
+ height: 250px;
+ width: 300px;
+ margin-left:150px; 	   
+	
+     }	
+
+.flower{
+  height:255px;
+  width: 260px;
+  margin-left:150px; 			
+				
+}
+.fly{
+  height:140px;
+  width: 200px;
+  margin-left:170px;
+  margin-top: -100px;
+}
+#favorites ul li a{
+text-decoration: none;
+}
