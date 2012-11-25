@@ -2,7 +2,7 @@ body{
     font-family: Century Gothic, sans-serif;
     font-size:	14px;	
    
-    background-color: #FBF5E6
+    background-color: #E6E8FA;	
 }
 ul.menu li{
     margin:0;
@@ -137,6 +137,7 @@ ol.adventures li{
   margin-top: -100px;
 }
 
+<<<<<<< Updated upstream
 .date-modified  {
     color:#0099CC;
 }
@@ -150,3 +151,23 @@ ol.adventures li{
 }
 
 
+=======
+h6{
+  color:#0099CC;
+  margin-left:120px;
+  font-size:  -1px;
+  position: absolute;
+  bottom:   -1400px;
+ 	
+}
+
+h5{
+  color:#0099CC;	
+  margin-left:0px;
+ font-size:  -1px;
+  position: absolute;
+  bottom:   -1375px;
+
+ 	
+}
+>>>>>>> Stashed changes
