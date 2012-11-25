@@ -137,12 +137,16 @@ ol.adventures li{
   margin-top: -100px;
 }
 
-h6{
-  color:#0099CC;
-  margin-left:120px;	
+.date-modified  {
+    color:#0099CC;
 }
 
-h5{
-  color:#0099CC;	
-  margin-left:0px;
+.date-modified h5{
+    text-align: left;
 }
+
+.date-modified h6{
+    text-align: center;
+}
+
+
