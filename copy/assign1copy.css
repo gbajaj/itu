@@ -137,7 +137,6 @@ ol.adventures li{
   margin-top: -100px;
 }
 
-<<<<<<< Updated upstream
 .date-modified  {
     color:#0099CC;
 }
@@ -149,25 +148,3 @@ ol.adventures li{
 .date-modified h6{
     text-align: center;
 }
-
-
-=======
-h6{
-  color:#0099CC;
-  margin-left:120px;
-  font-size:  -1px;
-  position: absolute;
-  bottom:   -1400px;
- 	
-}
-
-h5{
-  color:#0099CC;	
-  margin-left:0px;
- font-size:  -1px;
-  position: absolute;
-  bottom:   -1375px;
-
- 	
-}
->>>>>>> Stashed changes
