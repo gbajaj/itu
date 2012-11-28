@@ -111,14 +111,14 @@ h2{
 }
 
 ol.adventures li{
-	list-style-image:url(backpack.gif);
+	list-style-image:url(../img/backpack.gif);
 }
 
 .photo {
     height: 140px;
     width: 120px;
     float:right; 	  	   
-    background-image:url('award.jpg');
+    background-image:url('../img/award.jpg');
     background-size: 100% 100%;
 }				
      	
@@ -127,7 +127,7 @@ ol.adventures li{
     height: 250px;
     width: 300px;
     margin-left:150px;
-    background-image:url('beach.jpg');
+    background-image:url('../img/beach.jpg');
     background-size: 100% 100%;
 
 }	
