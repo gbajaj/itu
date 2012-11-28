@@ -1,7 +1,6 @@
 body {
     font-family: Century Gothic, sans-serif;
     font-size:	14px;	
-   
     background-color: #E6E8FA;	
 }
 
@@ -15,7 +14,7 @@ ul.menu li {
 	
 }
 
- ul.menu li a{
+ul.menu li a {
     display:block;
     text-decoration:none;
     margin:5px;
@@ -33,6 +32,7 @@ table {
 td {
     border: thin gray solid;
 }
+
     border: thin gray solid;
 }
 
@@ -40,26 +40,29 @@ caption {
     font-weight: bold;
     color:#0099CC;	
 }
+
 .contact {
     font-weight: bold;
 
 }
-
 .heading {
     background-color: #00B2EE;
 }
 
-.key {
+
+.key{
     font-weight: bold;
     margin-left: 0px;
     text-align: left;
 }
 
+
 ul.menu li a:hover {
     color:red;
 }
 
-ul.menu li a.current, ul.vert-one li a.current:hover {
+
+ul.menu li a.current, ul.vert-one li a.current:hover{
     background:#0000ff ;
 }
 
@@ -67,14 +70,18 @@ ul.menu li a.current, ul.vert-one li a.current:hover {
 text-align: center;
 }
 
+
 .color {
     color: #0099CC;
+       
 }
+
 
 .details {
     margin-left: 25%;
     margin-right: 25%;
 }
+
 
 .noList li div {
     display: table-cell;
@@ -82,9 +89,11 @@ text-align: center;
     padding-bottom: 5px;
 }
 
+
 .textRight {
     text-align: right;
 }
+
 
 .noList {
     list-style: none;
@@ -92,70 +101,84 @@ text-align: center;
     padding: 0;
 }
 
+
 .noList li {
     display:table-row;
 
 }
 
+
 .keyValue {
     padding-left: 10px;
 }
-#main{
+
+#main {
    text-align: center;
    color: #0276FD;
 }
+
 
 h2{
     color:#0099CC;
 }
 
-ol.adventures li{
+
+ol.adventures li {
 	list-style-image:url(backpack.gif);
+	
 }
+
 
 .photo {
     height: 140px;
     width: 120px;
-    float:right; 	  	   
+    float:right;
     background-image:url('award.jpg');
     background-size: 100% 100%;
-}				
+	 	  	   	
+}
+				
      	
-
 #beach {
     height: 250px;
     width: 300px;
     margin-left:150px;
     background-image:url('beach.jpg');
     background-size: 100% 100%;
-
-}	
-
+ 	   
+	
+}
+	
 .flower {
-    height:255px;
-    width: 260px;
+    height:250px;
+    width: 200px;
     margin-left:150px;
-    background-image:url('http://www.stanford.edu/~grg/images/orange_flower.jpg');
+    background-image:url('http://www.coolcategories.com/wp-content/uploads/2010/10/49740.gif');
     background-size: 100% 100%;
+			
+				
 }
 
-.fly{
-    height:140px;
-    width: 200px;
+.fly {
+    height:100px;
+    width: 100px;
     margin-left:170px;
     margin-top: -100px;
-    background-image:url('http://www.quitecurious.com/wp-content/gallery/flying-photo/flying.png');
+    background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPyHa1YPx6eJQRWMD9NJtpt9TQ7whdfdh8vCgYlOs1W0ODrq02UcyJwtk');
     background-size: 100% 100%;
 }
+
+ 	
 
 .date-modified  {
     color:#0099CC;
 }
 
 .date-modified h5{
-    text-align: left;
+    margin-left:210px;
+    
 }
 
 .date-modified h6{
-    text-align: center;
+    margin-left:125px;
 }
