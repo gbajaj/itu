@@ -1,0 +1,44 @@
+body {
+    font-family: sans-serif;
+    font-size: 15px;
+    width : 500px;
+    height: auto;
+    margin: auto;
+    background-color: #CCFFFF;
+    border-style:dotted;
+    border-color: blueviolet;
+    padding: 5px;
+}
+
+#color {
+    color: green;
+
+}
+
+.coffee {
+    color: brown;
+}
+
+.green {
+    color: green;
+}
+
+
+.teach, h2  {
+    color: red;
+}
+
+
+.page {
+    text-align: center;
+    color: blue;
+    font-size: 14px;
+    text-decoration:underline;
+
+
+
+}
+
+
+
+
