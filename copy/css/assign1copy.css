@@ -122,18 +122,28 @@ h2{
     color:#0099CC;
 }
 
+<<<<<<< HEAD:copy/assign1copy.css
 
 ol.adventures li {
 	list-style-image:url(backpack.gif);
 	
+=======
+ol.adventures li{
+	list-style-image:url(../img/backpack.gif);
+>>>>>>> 09bc3f30d8a9984a2e6707aa9bfa8c8a927cbe04:copy/css/assign1copy.css
 }
 
 
 .photo {
     height: 140px;
     width: 120px;
+<<<<<<< HEAD:copy/assign1copy.css
     float:right;
     background-image:url('award.jpg');
+=======
+    float:right; 	  	   
+    background-image:url('../img/award.jpg');
+>>>>>>> 09bc3f30d8a9984a2e6707aa9bfa8c8a927cbe04:copy/css/assign1copy.css
     background-size: 100% 100%;
 	 	  	   	
 }
@@ -143,7 +153,7 @@ ol.adventures li {
     height: 250px;
     width: 300px;
     margin-left:150px;
-    background-image:url('beach.jpg');
+    background-image:url('../img/beach.jpg');
     background-size: 100% 100%;
  	   
 	
