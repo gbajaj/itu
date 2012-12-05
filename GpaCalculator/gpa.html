@@ -106,8 +106,11 @@
                     details += '<div>Total grade points ' + totalPoints +'</div> </br>';
                     details += '<div>Number of hours ' + totalHours +'</div>  </br>';
                     details += '<div>GPA = ' + parseFloat(GPA).toFixed(2)  + '</div>';
-                    result.innerHTML = details;
+                } else {
+                    details +="No Valid Course Details Was Entered. Please Try Again!"
                 }
+
+                result.innerHTML = details;
             }
 
             function readInput(msg, toCompareWith) {
