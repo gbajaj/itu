@@ -17,7 +17,27 @@ body {
 
 .wrapper {
     width:600px;
-    mirgin-left:auto;
-    mirgin-right:auto;
-    text-align: center;
+    margin: auto;
+}
+
+
+.noList li div {
+    display: table-cell;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.textRight {
+    text-align: right;
+}
+
+.noList {
+    list-style: none;
+    display: table;
+    padding: 0;
+}
+
+.noList li {
+    display:table-row;
+
 }
