@@ -13,23 +13,110 @@
             var sub = "Enter Sub";
             var grade = "Enter Grades";
             var units = "Enter Units";
-//            var s = prompt('enterSubMsg','Name');
+            var invalidGrade = -1;
+            var arrayOfCourse = new Array();
 
             function startCalculation (params) {
                 var keepRunning = true;
-                    prompt('enterSubMsg', sub);
-                    prompt('enterSubMsg', grade);
-                    prompt('enterSubMsg', units);
+                var subRead;
+                var gradeRead;
+                var credRead;
+                var readMore = true;
 
+                while (readMore ) {
+                    if ((subRead = readInput(enterSubMsg, sub)) &&
+                    (gradeRead = readInput(enterGradeMsg, grade)) &&
+                    (credRead = readInput(enterCred, units))) {
+
+                        var points = convertGradeToPoints(gradeRead);
+                        if (points === invalidGrade) {
+                            readMore = false;
+                            break;
+                        }
+                        var numCredit = parseInt(credRead, 10);
+
+                        if (isNaN(numCredit)) {
+                            readMore = false;
+                            break;
+                        }
+
+                        if (readMore) {
+                            arrayOfCourse.push({sub:subRead,
+                                                points:points,
+                                                units:numCredit});
+                        }
+                    } else {
+                        readMore = false;
+                    }
+                }
+
+                showResults();
             }
 
+            function convertGradeToPoints(grade) {
+                var point = invalidGrade;
+                var gradeToFind = grade && grade.toLowerCase();
+
+                switch (gradeToFind) {
+                    case "a":
+                        point = 4.00;
+                        break;
+                    case "b+":
+                        point = 3.5;
+                        break;
+                    case "b":
+                        point = 3.00;
+                        break;
+                    case "c+":
+                        point = 2.5;
+                        break;
+                    case "c":
+                        point = 2.00;
+                        break;
+                    case "d":
+                        point = 1.00;
+                        break;
+                    case "f":
+                    case "af":
+                    case "wf":
+                        point = 0.0;
+                        break;
+                }
+                return point;
+            };
+
+            function showResults() {
+                var result = document.getElementById("result");
+                var details = '<ul class="noList">"';
+                if (arrayOfCourse.length > 0) {
+                    details += '<li> <div class="key"> Courses</div> <div class="key">Grade</div><div class="key">Units</div></li>';
+
+                    for (var i = 0; i <arrayOfCourse.length; i++) {
+                        details += "<li>";
+                            details += '<div class="keyValue">' + arrayOfCourse[i].sub + '</div>' +
+                                    '<div class="keyValue">' + arrayOfCourse[i].points + '</div>' +
+                                    '<div class="keyValue">' + arrayOfCourse[i].units + '</div>' ;
+                        details += "</li>";
+                    }
+                    details += '</ul>';
+                    result.innerHTML = details;
+                }
+            }
+
+            function readInput(msg, toCompareWith) {
+                var res = prompt(msg, toCompareWith);
+                if (res !== "" && res !== toCompareWith) {
+                   return res;
+                }
+                return false
+            }
         </script >
     </head>
     <body>
-        Your browser doesn't support frames.
-        Therefore, this is the noframe version of the site.
-
-        <button name="Start" value="Start" onclick="startCalculation()">Start</button>
+    <div class="wrapper">
+        <button onclick="startCalculation()">Calculate Grade</button>
+        <div id="result"></div>
+    </div>
     </body>
 </html>
 
