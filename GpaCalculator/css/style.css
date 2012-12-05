@@ -1,0 +1,23 @@
+body {
+    font-family: Century Gothic, sans-serif;
+    font-size:	14px;	
+   
+    background-color: #E6E8FA;	
+}
+
+.key {
+    font-weight: bold;
+    margin-left: 0px;
+    text-align: left;
+}
+
+.keyValue {
+    padding-left: 10px;
+}
+
+.wrapper {
+    width:600px;
+    mirgin-left:auto;
+    mirgin-right:auto;
+    text-align: center;
+}
