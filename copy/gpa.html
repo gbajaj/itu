@@ -87,18 +87,25 @@
 
             function showResults() {
                 var result = document.getElementById("result");
-                var details = '<ul class="noList">"';
+                var details = '<ul class="noList">';
+                var totalHours = 0;
+                var totalPoints = 0;
                 if (arrayOfCourse.length > 0) {
                     details += '<li> <div class="key"> Courses</div> <div class="key">Grade</div><div class="key">Units</div></li>';
-
                     for (var i = 0; i <arrayOfCourse.length; i++) {
+                        totalHours += arrayOfCourse[i].units;
+                        totalPoints += (arrayOfCourse[i].points *  arrayOfCourse[i].units);
                         details += "<li>";
                             details += '<div class="keyValue">' + arrayOfCourse[i].sub + '</div>' +
                                     '<div class="keyValue">' + arrayOfCourse[i].points + '</div>' +
                                     '<div class="keyValue">' + arrayOfCourse[i].units + '</div>' ;
                         details += "</li>";
                     }
+                    var GPA = totalPoints / totalHours;
                     details += '</ul>';
+                    details += '<div>Total grade points ' + totalPoints +'</div> </br>';
+                    details += '<div>Number of hours ' + totalHours +'</div>  </br>';
+                    details += '<div>GPA = ' + parseFloat(GPA).toFixed(2)  + '</div>';
                     result.innerHTML = details;
                 }
             }
@@ -108,7 +115,7 @@
                 if (res !== "" && res !== toCompareWith) {
                    return res;
                 }
-                return false
+                return false;
             }
         </script >
     </head>
