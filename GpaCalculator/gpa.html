@@ -7,126 +7,70 @@
         <title>GPA</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <script type="text/javascript">
-            var enterSubMsg = "Please enter subject";
-            var enterGradeMsg = "Please enter the grade";
-            var enterCred = "No.of units of the subject";
-            var sub = "Enter Sub";
-            var grade = "Enter Grades";
-            var units = "Enter Units";
             var invalidGrade = -1;
-            var arrayOfCourse = new Array();
-
-            function startCalculation (params) {
-                var keepRunning = true;
-                var subRead;
-                var gradeRead;
-                var credRead;
-                var readMore = true;
-
-                while (readMore ) {
-                    if ((subRead = readInput(enterSubMsg, sub)) &&
-                    (gradeRead = readInput(enterGradeMsg, grade)) &&
-                    (credRead = readInput(enterCred, units))) {
-
-                        var points = convertGradeToPoints(gradeRead);
-                        if (points === invalidGrade) {
-                            readMore = false;
-                            break;
-                        }
-                        var numCredit = parseInt(credRead, 10);
-
-                        if (isNaN(numCredit)) {
-                            readMore = false;
-                            break;
-                        }
-
-                        if (readMore) {
-                            arrayOfCourse.push({sub:subRead,
-                                                points:points,
-                                                units:numCredit});
-                        }
-                    } else {
-                        readMore = false;
-                    }
-                }
-
-                showResults();
+            var gradeTable = {
+                            "a" : 4,
+                            "b+" : 3.5,
+                            "b" : 3,
+                            "c+" : 2.5,
+                            "c" : 2.00,
+                            "d" : 1,
+                            "f" : 0,
+                            "af" : 0,
+                            "wf" : 0
             }
 
-            function convertGradeToPoints(grade) {
-                var point = invalidGrade;
-                var gradeToFind = grade && grade.toLowerCase();
 
-                switch (gradeToFind) {
-                    case "a":
-                        point = 4.00;
-                        break;
-                    case "b+":
-                        point = 3.5;
-                        break;
-                    case "b":
-                        point = 3.00;
-                        break;
-                    case "c+":
-                        point = 2.5;
-                        break;
-                    case "c":
-                        point = 2.00;
-                        break;
-                    case "d":
-                        point = 1.00;
-                        break;
-                    case "f":
-                    case "af":
-                    case "wf":
-                        point = 0.0;
-                        break;
+            function readData() {
+                var data = document.getElementById('first').value;
+                var array = data.split('\n');
+                var totalGradePoint = 0;
+                var totalHours = 0;
+                if (array.length > 0) {
+                    var temp;
+                    for (var i = 0; i < array.length; i++) {
+                        var line = array[i].trim();
+
+                        if (line) {
+                            var array = line.split(' ');
+                            var point = gradeTable[array[1]];
+                            var numHrs = parseInt(array[2], 10);
+                            if (point !== invalidGrade && !isNaN(numHrs) && numHrs > 0) {
+                                totalGradePoint += point * numHrs;
+                                totalHours += numHrs;
+                            }
+                        }
+
+                    }
+                    var finalGpa = 0;
+                    if (totalHours) {
+                        var finalGpa = totalGradePoint/totalHours;
+                        finalGpa = parseFloat(finalGpa).toFixed(2);
+                    }
+
+                    document.getElementById("gradePts").value = totalGradePoint.toString();
+                    document.getElementById("hours").value = totalHours.toString();
+                    document.getElementById("gpaBox").value = finalGpa.toString();
                 }
-                return point;
             };
 
-            function showResults() {
-                var result = document.getElementById("result");
-                var details = '<ul class="noList">';
-                var totalHours = 0;
-                var totalPoints = 0;
-                if (arrayOfCourse.length > 0) {
-                    details += '<li> <div class="key"> Courses</div> <div class="key">Grade</div><div class="key">Units</div></li>';
-                    for (var i = 0; i <arrayOfCourse.length; i++) {
-                        totalHours += arrayOfCourse[i].units;
-                        totalPoints += (arrayOfCourse[i].points *  arrayOfCourse[i].units);
-                        details += "<li>";
-                            details += '<div class="keyValue">' + arrayOfCourse[i].sub + '</div>' +
-                                    '<div class="keyValue">' + arrayOfCourse[i].points + '</div>' +
-                                    '<div class="keyValue">' + arrayOfCourse[i].units + '</div>' ;
-                        details += "</li>";
-                    }
-                    var GPA = totalPoints / totalHours;
-                    details += '</ul>';
-                    details += '<div>Total grade points = <strong>' + totalPoints +'</strong></div> </br>';
-                    details += '<div>Number of hours = <strong>' + totalHours +'</strong></div>  </br>';
-                    details += '<div>GPA = <strong>' + parseFloat(GPA).toFixed(2)  + '</strong></div>';
-                } else {
-                    details +="No Valid Course Details Was Entered. Please Try Again!"
-                }
-
-                result.innerHTML = details;
-            }
-
-            function readInput(msg, toCompareWith) {
-                var res = prompt(msg, toCompareWith);
-                if (res !== "" && res !== toCompareWith) {
-                   return res;
-                }
-                return false;
-            }
         </script >
     </head>
     <body>
+
     <div class="wrapper">
-        <button onclick="startCalculation()">Calculate Grade</button>
-        <div id="result"></div>
+       <h1>Gpa Calculator</h1>
+        <div class="textAreaWrapper">
+            <textarea id="first" cols="50" rows="10">
+            </textarea>
+
+            <input type="button" value="Compute GPA" onclick="readData()">
+        <div>Total # of Grade points : <input id="gradePts"></input ></br>
+        <div>Number # of hours : <input  id="hours"></input ></div>  </br>
+        <div>Grade Point Average : <input  id="gpaBox"> </input ></div>
+        </div>
     </div>
+
     </body>
 </html>
 

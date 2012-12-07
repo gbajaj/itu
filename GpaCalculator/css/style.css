@@ -1,45 +1,25 @@
 body {
-    font-family: Century Gothic, sans-serif;
-    font-size:	14px;	
-   
-    background-color: #E6E8FA;	
+    background-color: #f0ffff;
 }
 
-.key {
-    font-weight: bold;
-    margin-left: 0px;
-    text-align: left;
-    text-decoration:underline;
+
+.wrapper{
+    width: 800px;
+    margin: auto;
 }
 
-.keyValue {
-    padding-left: 10px;
+.wrapper h1{
+    text-align: center;
+
 }
 
-.wrapper {
-    width:600px;
+.textAreaWrapper {
+    width: 400px;
     margin: auto;
 }
 
 
-.noList li div {
-    display: table-cell;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 20px;
+.textAreaWrapper input {
+    width: 100px;
 }
 
-.textRight {
-    text-align: right;
-}
-
-.noList {
-    list-style: none;
-    display: table;
-    padding: 0;
-}
-
-.noList li {
-    display:table-row;
-
-}
