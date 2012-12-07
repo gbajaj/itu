@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Pirate Zone</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!-- Codes by HTML.am -->
+<div class="textAreaWrapper">
+    <form name="frm1">
+        <textarea id="first" cols="50" rows="10">
+        </textarea>
+        <textarea id="second" cols="50" rows="10">
+        </textarea>
+    </form>
+    <div>
+        <input type="button" value="Translate" onclick="onSubmit()">
+    </div>
+
+</div>
+<script type="text/javascript">
+    //Dictionary definition starts
+    PHRASES = [
+        ["hello", "ahoy"],
+        ["hi", "yo-ho-ho"],
+        ["pardon me", "avast"],
+        ["excuse me", "arrr"],
+        ["my", "me"],
+        ["friend", "mebucko"],
+        ["sir", "matey"],
+        ["madam", "proud beauty"],
+        ["miss", "comely wench"],
+        ["stranger", "scurvy dog"],
+        ["officer", "foul blaggart"],
+        ["where", "whar"],
+        ["is", "be"],
+        ["the", "th'"],
+        ["you", "ye"],
+        ["tell", "be tellin'"],
+        ["know", "be knowin'"],
+        ["how far", "how manyleagues"],
+        ["old", "barnacle-covered"],
+        ["attractive", "comely"],
+        ["happy", "grog-filled"],
+        ["nearby", "broadside"],
+        ["restroom", "head"],
+        ["restaurant", "galley"],
+        ["hotel", "fleabag inn"],
+        ["pub", "Skull & Scuppers"],
+        ["bank", "buried trasure"]
+    ];
+    //Dictionary definition ends
+
+    // Returns: a copy of str with the first letter capitalized
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() +
+                str.substring(1);
+    }
+
+    // Returns: a copy of text with English phrases replaced by piratey equivalemts
+    function translate(text) {
+        for (var i = 0; i < PHRASES.length; i++) {
+
+            var toReplace = new RegExp("\\b" + PHRASES[i][0] + "\\b", "i");
+
+            var index = text.search(toReplace);
+            while (index != -1) {
+                if (text.charAt(index) >= "A"
+                        && text.charAt(index) <= "Z") {
+
+                    text = text.replace(toReplace,
+                            capitalize(PHRASES[i][1]));
+                } else {
+                    text = text.replace(toReplace, PHRASES[i][1]);
+                }
+                index = text.search(toReplace);
+            }
+        }
+        return text;
+    }
+
+    // Returns: a copy of str with the first letter capitalized
+    function capitalize(str) {
+        return str.charAt(0).toUpperCase() +
+                str.substring(1);
+    }
+
+    // Returns: a copy of text with English phrases replaced by piratey equivalemts
+    function Translate(text) {
+        for (var i = 0; i < PHRASES.length; i++) {
+            var toReplace = new RegExp("\\b"+ PHRASES[i][0] + "\\b", "i");
+            var index = text.search(toReplace);
+
+            while (index != -1) {
+                if (text.charAt(index) >= "A"
+                        && text.charAt(index) <= "Z") {
+                    text = text.replace(toReplace,
+                            capitalize(PHRASES[i][1]));
+                } else {
+                    text = text.replace(toReplace, PHRASES[i][1]);
+                }
+                index = text.search(toReplace);
+            }
+        }
+        return text;
+    }
+
+
+    function onSubmit() {
+        var text1 = document.getElementById('first').value;
+        var toTransLate = text1.trim();
+        var result = Translate(toTransLate);
+        if (result) {
+            document.getElementById('second').value = result;
+        }
+    }
+
+</script>
+</body>
+</html>

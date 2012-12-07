@@ -1,0 +1,21 @@
+body {
+    background-color: #f0ffff;
+}
+
+.textAreaWrapper {
+    width: 800px;
+    margin: auto;
+    margin-top:30px;
+    padding: 50px;
+}
+.textAreaWrapper textarea {
+    margin-right: 20px
+}
+
+.textAreaWrapper div{
+    text-align: center;
+}
+.textAreaWrapper input {
+    margin-top: 30px;
+    width: 100px;
+}
