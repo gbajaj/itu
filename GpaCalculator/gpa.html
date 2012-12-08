@@ -32,9 +32,9 @@
                         var line = array[i].trim();
 
                         if (line) {
-                            var array = line.split(' ');
-                            var point = gradeTable[array[1]];
-                            var numHrs = parseInt(array[2], 10);
+                            var lineSplit = line.split(' ');
+                            var point = gradeTable[lineSplit[1]];
+                            var numHrs = parseInt(lineSplit[2], 10);
                             if (point !== invalidGrade && !isNaN(numHrs) && numHrs > 0) {
                                 totalGradePoint += point * numHrs;
                                 totalHours += numHrs;
@@ -61,10 +61,8 @@
     <div class="wrapper">
        <h1>Gpa Calculator</h1>
         <div class="textAreaWrapper">
-            <textarea id="first" cols="50" rows="10">
-            </textarea>
-
-            <input type="button" value="Compute GPA" onclick="readData()">
+        <textarea id="first" cols="50" rows="10" wrap="physical"></textarea>
+        <input type="button" value="Compute GPA" onclick="readData()">
         <div>Total # of Grade points : <input id="gradePts"></input ></br>
         <div>Number # of hours : <input  id="hours"></input ></div>  </br>
         <div>Grade Point Average : <input  id="gpaBox"> </input ></div>
