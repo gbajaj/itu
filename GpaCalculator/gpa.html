@@ -33,7 +33,7 @@
 
                         if (line) {
                             var lineSplit = line.split(' ');
-                            var point = gradeTable[lineSplit[1]];
+                            var point = gradeTable[lineSplit[1].toLowerCase()];
                             var numHrs = parseInt(lineSplit[2], 10);
                             if (point !== invalidGrade && !isNaN(numHrs) && numHrs > 0) {
                                 totalGradePoint += point * numHrs;
