@@ -15,6 +15,17 @@
             var units = "Enter Units";
             var invalidGrade = -1;
             var arrayOfCourse = new Array();
+            var gradeTable = {
+                "a" : 4,
+                "b+" : 3.5,
+                "b" : 3,
+                "c+" : 2.5,
+                "c" : 2.00,
+                "d" : 1,
+                "f" : 0,
+                "af" : 0,
+                "wf" : 0
+            }
 
             function startCalculation (params) {
                 var keepRunning = true;
@@ -54,35 +65,10 @@
             }
 
             function convertGradeToPoints(grade) {
-                var point = invalidGrade;
+                var point;
                 var gradeToFind = grade && grade.toLowerCase();
-
-                switch (gradeToFind) {
-                    case "a":
-                        point = 4.00;
-                        break;
-                    case "b+":
-                        point = 3.5;
-                        break;
-                    case "b":
-                        point = 3.00;
-                        break;
-                    case "c+":
-                        point = 2.5;
-                        break;
-                    case "c":
-                        point = 2.00;
-                        break;
-                    case "d":
-                        point = 1.00;
-                        break;
-                    case "f":
-                    case "af":
-                    case "wf":
-                        point = 0.0;
-                        break;
-                }
-                return point;
+                point = gradeTable[gradeToFind]
+                return (point ||  invalidGrade);
             };
 
             function showResults() {
