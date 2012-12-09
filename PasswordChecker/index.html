@@ -5,58 +5,98 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
     <title>Password Checker</title>
-    <link rel="stylesheet" type="text/css" href="css/assign1copy.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script type="text/javascript">
      var MIN_LENGTH = 8;
-     var BAD = -1;
-     var WEAK = 0;
-     var NORMAL = 1;
-     var STRONG = 2;
-     var VERY_STRONG = 3;
-     var codeToMsg = {
-         undefined:"Not Accepted",
-         null:"Not Accepted",
-         BAD:"Bad Password",
-         WEAK: "Weak Password",
-         NORMAL: "Normal Password",
-         STRONG : "Strong Password",
-         VERY_STRONG: "Very Strong  Password"
-     };
+     var desc = new Array();
+     desc[0] = "Very Weak";
+     desc[1] = "Weak";
+     desc[2] = "Better";
+     desc[3] = "Medium";
+     desc[4] = "Strong";
+     desc[5] = "Strongest";
      var badWordList =
              [
                      "help",
                      "1234567",
+                     "7654331",
                      "test",
                      "password",
+                     "work",
+                     "god",
+                     "jesus",
+                     "link",
+                     "love",
              ];
      function checkPassword () {
+         var score = -1;
          var password = document.getElementById("inputBox").value;
-         var result = "BAD";
-         if (password && password.length >= MIN_LENGTH) {
-             result = "NORMAL";
+         var badPhraseFound = false;
+         if (password ) {
+             score = 0;
+         }
+         if (password.length >= MIN_LENGTH) {
+
+             score++;
+             //if password has both lower and uppercase characters give 1 point
+             if ( ( password.match(/[a-z]/) ) && ( password.match(/[A-Z]/) ) ) {
+                 score++;
+             }
+
+             //if password has at least one number give 1 point
+             if (password.match(/\d+/)) {
+                 score++;
+             }
+             //if password has at least one special caracther give 1 point
+
+             if ( password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) {
+                 score++;
+             }
+
+             //if password bigger than 12 give another 1 point
+
+             if (password.length > 12) {
+                 score++;
+             }
+
              for (var i = 0; i < badWordList.length; i++) {
                 if (password.search(badWordList[i]) !== -1) {
-                    result = "BAD";
+                    badPhraseFound = true;
                     break;
                 }
             }
+
+            if (badPhraseFound) {
+                score = 0;
+            }
          }
-         notify (result);
+
+         notify (score);
      }
 
-     function notify (result) {
-         var msg = codeToMsg[result];
+     function notify (score) {
+         var msg;
+         if (score === -1)  {
+             msg = "Password Not Entered";
+         } else {
+             msg = desc[score];
+         }
+
 
          var result = document.getElementById("result");
+         result.innerHTML ="";
          result.innerHTML = msg;
+         result.setAttribute("class", "strength"+score);
      }
 
     </script>
 </head>
 <body>
-
-<label>Enter Password</label><input id="inputBox" type="text" name="pass" onkeydown="checkPassword()"></input><label id="result"></label>
-<div><button onclick="">Check</button></div>
+<div id="wrapper">
+    <p><h1>Password Strength Metter</h1></p>
+    <label>Password</label><input id="inputBox" type="text" name="pass" onkeyup="checkPassword()"></input>
+    <div class="strengthWrap"><label id="result">Password Not Entered</label></div>
+</div>
 </body>
 </html>
 
