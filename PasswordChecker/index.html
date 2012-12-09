@@ -4,11 +4,59 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-    <title>Assignment1</title>
+    <title>Password Checker</title>
     <link rel="stylesheet" type="text/css" href="css/assign1copy.css" />
+    <script type="text/javascript">
+     var MIN_LENGTH = 8;
+     var BAD = -1;
+     var WEAK = 0;
+     var NORMAL = 1;
+     var STRONG = 2;
+     var VERY_STRONG = 3;
+     var codeToMsg = {
+         undefined:"Not Accepted",
+         null:"Not Accepted",
+         BAD:"Bad Password",
+         WEAK: "Weak Password",
+         NORMAL: "Normal Password",
+         STRONG : "Strong Password",
+         VERY_STRONG: "Very Strong  Password"
+     };
+     var badWordList =
+             [
+                     "help",
+                     "1234567",
+                     "test",
+                     "password",
+             ];
+     function checkPassword () {
+         var password = document.getElementById("inputBox").value;
+         var result = "BAD";
+         if (password && password.length >= MIN_LENGTH) {
+             result = "NORMAL";
+             for (var i = 0; i < badWordList.length; i++) {
+                if (password.search(badWordList[i]) !== -1) {
+                    result = "BAD";
+                    break;
+                }
+            }
+         }
+         notify (result);
+     }
+
+     function notify (result) {
+         var msg = codeToMsg[result];
+
+         var result = document.getElementById("result");
+         result.innerHTML = msg;
+     }
+
+    </script>
 </head>
 <body>
 
+<label>Enter Password</label><input id="inputBox" type="text" name="pass" onkeydown="checkPassword()"></input><label id="result"></label>
+<div><button onclick="">Check</button></div>
 </body>
 </html>
 
