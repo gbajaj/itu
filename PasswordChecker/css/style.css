@@ -14,37 +14,45 @@ body {
     display: inline-block;
     width: 200px;
 }
+
 .strength0 {
+    width:250px;
+    background:#ff0000;
+    color:white;
+    padding: 2px;
+}
+
+.strength1 {
     width:250px;
     background:#cccccc;
     padding: 2px;
 }
 
-.strength1 {
+.strength2 {
     width:50px;
     background:#ff0000;
     padding: 2px;
 
 }
-.strength2 {
+.strength3 {
     width:100px;
     background:#ff5f5f;
     padding: 2px;
 
 }
-.strength3 {
+.strength4 {
     width:150px;
     background:#56e500;
     padding: 2px;
 
 }
-.strength4 {
+.strength5 {
     background:#4dcd00;
     width:200px;
     padding: 2px;
 
 }
-.strength5 {
+.strength6 {
     background:#399800;
     width:250px;
     padding: 2px;

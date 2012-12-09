@@ -9,12 +9,13 @@
     <script type="text/javascript">
      var MIN_LENGTH = 8;
      var desc = new Array();
-     desc[0] = "Very Weak";
-     desc[1] = "Weak";
-     desc[2] = "Better";
-     desc[3] = "Medium";
-     desc[4] = "Strong";
-     desc[5] = "Strongest";
+     desc[0] = "Bad Password";
+     desc[1] = "Very Weak";
+     desc[2] = "Weak";
+     desc[3] = "Better";
+     desc[4] = "Medium";
+     desc[5] = "Strong";
+     desc[6] = "Strongest";
      var badWordList =
              [
                      "help",
@@ -31,9 +32,8 @@
      function checkPassword () {
          var score = -1;
          var password = document.getElementById("inputBox").value;
-         var badPhraseFound = false;
          if (password ) {
-             score = 0;
+             score = 1;
          }
          if (password.length >= MIN_LENGTH) {
 
@@ -58,18 +58,15 @@
              if (password.length > 12) {
                  score++;
              }
-
-             for (var i = 0; i < badWordList.length; i++) {
-                if (password.search(badWordList[i]) !== -1) {
-                    badPhraseFound = true;
-                    break;
-                }
-            }
-
-            if (badPhraseFound) {
-                score = 0;
-            }
          }
+
+         for (var i = 0; i < badWordList.length; i++) {
+             if (password === badWordList[i]) {
+                 score = 0;
+                 break;
+             }
+         }
+
 
          notify (score);
      }
